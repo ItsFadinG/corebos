@@ -2889,7 +2889,7 @@ foreach ($comboTables as $tablename)
 	{
 		if($val != '')
 		{
-			$conn->query("insert into vtiger_".$tablename. " values(null,'".$val."',".$i.",1)");
+			$conn->query("insert into vtiger_".$tablename. " values(null,'".mysql_real_escape_string($val)."',".$i.",1)");
 		}
 		else
 		{
