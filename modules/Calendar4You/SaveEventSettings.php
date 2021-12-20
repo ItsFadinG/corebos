@@ -10,7 +10,7 @@
 require_once 'include/database/PearDatabase.php';
 global $adb,$current_user;
 
-$user_view_type = $_REQUEST['user_view_type'];
+$user_view_type = mysqli_real_escape_string($_REQUEST['user_view_type']);
 
 $mode = vtlib_purify($_REQUEST['mode']);
 if ($mode=='module') {
