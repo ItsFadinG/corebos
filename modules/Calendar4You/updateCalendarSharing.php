@@ -19,7 +19,7 @@ if (!empty($_REQUEST['hour_format'])) {
 
 $activity_view = $_REQUEST['activity_view'];
 
-$user_view = $_REQUEST['user_view'];
+$user_view = mysqli_real_escape_string($_REQUEST['user_view']);
 
 $adb->pquery('delete from vtiger_sharedcalendar where userid=?', array($_REQUEST['current_userid']));
 
